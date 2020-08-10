@@ -5,7 +5,7 @@ def handler(event, context):
   return {
     'statusCode': 200,
     'headers': {
-      'Content-Type': 'text/plain'
+      'Content-Type': 'application/json'
     },
-    'body': 'Hello, CDK! You have hit {}\n'.format(event['path'])
+    'body': json.dumps({"message": "Hello, CDK! You have hit {}".format(event['path'])})
   }
