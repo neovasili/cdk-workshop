@@ -1,5 +1,7 @@
 # CDK Python workshop
 
+![pre-commit](https://github.com/neovasili/cdk-workshop/workflows/pre-commit/badge.svg)
+
 You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`cdk_workshop_stack`)
 which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
 
