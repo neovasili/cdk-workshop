@@ -10,8 +10,8 @@ from hit_counter import HitCounter
 
 class CdkWorkshopStack(core.Stack):
 
-  def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
-    super().__init__(scope, id, **kwargs)
+  def __init__(self, scope: core.Construct, _id: str, **kwargs) -> None:
+    super().__init__(scope, _id, **kwargs)
 
     hello_lambda = _lambda.Function(
       self,
@@ -27,13 +27,13 @@ class CdkWorkshopStack(core.Stack):
       downstream=hello_lambda
     )
 
-    hello_apigw = apigw.LambdaRestApi(
+    apigw.LambdaRestApi(
       self,
       'HelloRestApi',
       handler = hello_with_counter.handler
     )
 
-    table_viewer = TableViewer(
+    TableViewer(
       self,
       'TableViewer',
       title='Hello hits',

@@ -5,7 +5,7 @@ from aws_cdk import (
 )
 
 class HitCounter(core.Construct):
-  
+
   @property
   def handler(self):
     return self._handler
@@ -14,8 +14,14 @@ class HitCounter(core.Construct):
   def table(self):
     return self._table
 
-  def __init__(self, scope: core.Construct, id: str, downstream: _lambda.IFunction, **kwargs) -> None:
-    super().__init__(scope, id, **kwargs)
+  def __init__(
+      self,
+      scope: core.Construct,
+      _id: str,
+      downstream: _lambda.IFunction,
+      **kwargs
+    ) -> None:
+    super().__init__(scope, _id, **kwargs)
 
     self._table = ddb.Table(
       self,

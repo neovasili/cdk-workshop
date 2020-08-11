@@ -63,6 +63,44 @@ command.
 
 Enjoy!
 
+## Participating to this repository
+
+### Development Practices
+
+Developers on this repository must follow the following coding practices:
+
+* No commit to Master branch: the only way to publish code is via feature branches, then PRs to master.
+* Signed Commits: Developers must have a PGP key setup and sign their commits using `git commit -s -m "my commit"`
+* Pre Commit Hook: this project uses pre-commit to validate that code follows best practices. Developers must run `pre-commit install` at the root of their repository to activate it, after installing for their machine.
+
+### Requirements
+
+This project uses python3 and serverless framework, all of which must be installed locally on the developer machines.
+
+* Python 3: [https://www.python.org/download/releases/3.0/](https://www.python.org/download/releases/3.0/)
+* Pre-commit: [pre-commit](https://pre-commit.com/) is an abstraction layer on top of Git Hooks to organize the execution of tests at different moments of the lifecycle of a repository. It must be installed via the official [install procedure](https://pre-commit.com/#install)
+
+### Testing Pre Commit Hooks
+
+Once installed, pre-commmit will operate each time `git commit` is run. It is however possible to run it on all files via
+
+```bash
+$ pre-commit run --all-files
+Check for added large files..............................................Passed
+Check for case conflicts.................................................Passed
+Check that executables have shebangs.................(no files to check)Skipped
+Check JSON...............................................................Passed
+Check for merge conflicts................................................Passed
+Trim Trailing Whitespace.................................................Passed
+Tabs remover.............................................................Passed
+Check markdown files.....................................................Passed
+Test shell scripts with shellcheck...................(no files to check)Skipped
+Python lintern...........................................................Passed
+Python unit tests........................................................Passed
+```
+
+to validate that an untracked change will pass before trying to commit it.
+
 ## References
 
 * [https://cdkworkshop.com](https://cdkworkshop.com)

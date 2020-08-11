@@ -2,7 +2,7 @@ import setuptools
 
 
 with open("README.md") as fp:
-  long_description = fp.read()
+  LONG_DESCRIPTION = fp.read()
 
 
 setuptools.setup(
@@ -10,7 +10,7 @@ setuptools.setup(
   version="0.0.1",
 
   description="A sample CDK Python app",
-  long_description=long_description,
+  long_description=LONG_DESCRIPTION,
   long_description_content_type="text/markdown",
 
   author="Juan Manuel Ruiz Fernández",
@@ -28,6 +28,7 @@ setuptools.setup(
     "aws-cdk.aws_lambda==1.57.0",
     "aws-cdk.aws_apigateway==1.57.0",
     "aws-cdk.aws_dynamodb==1.57.0",
+    "cdk_dynamo_table_viewer==3.1.2",
   ],
 
   python_requires=">=3.6",
