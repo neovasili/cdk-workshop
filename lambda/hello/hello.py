@@ -1,6 +1,7 @@
 import json
 
 def handler(event, context):
+  str(context)
   print('request: {}'.format(json.dumps(event)))
   return {
     'statusCode': 200,
