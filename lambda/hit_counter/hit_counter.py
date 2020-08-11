@@ -11,7 +11,7 @@ def handler(event, context):
   print('request: {}'.format(json.dumps(event)))
   table.update_item(
     Key={'path':event['path']},
-    UpdateExpression='ADD this :incr',
+    UpdateExpression='ADD hits :incr',
     ExpressionAttributeValues={':incr': 1}
   )
 

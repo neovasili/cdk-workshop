@@ -4,6 +4,7 @@ from aws_cdk import (
   core
 )
 
+from cdk_dynamo_table_viewer import TableViewer
 from hit_counter import HitCounter
 
 
@@ -16,7 +17,7 @@ class CdkWorkshopStack(core.Stack):
       self,
       'HelloHandler',
       runtime = _lambda.Runtime.PYTHON_3_8,
-      code = _lambda.Code.asset('lambda'),
+      code = _lambda.Code.asset('lambda/hello'),
       handler = 'hello.handler'
     )
 
@@ -30,4 +31,12 @@ class CdkWorkshopStack(core.Stack):
       self,
       'HelloRestApi',
       handler = hello_with_counter.handler
+    )
+
+    table_viewer = TableViewer(
+      self,
+      'TableViewer',
+      title='Hello hits',
+      table=hello_with_counter.table,
+      sort_by='-hits'
     )
