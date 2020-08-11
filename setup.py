@@ -28,6 +28,7 @@ setuptools.setup(
     "aws-cdk.aws_lambda==1.57.0",
     "aws-cdk.aws_apigateway==1.57.0",
     "aws-cdk.aws_dynamodb==1.57.0",
+    "cdk_dynamo_table_viewer==3.1.2",
   ],
 
   python_requires=">=3.6",
